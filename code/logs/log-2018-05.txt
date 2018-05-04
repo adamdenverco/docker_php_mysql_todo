@@ -1,0 +1,1 @@
+2018-05-04 01:03:08 : {"status":"error","message":"Unable to connect to the database server: SQLSTATE[HY000] [2002] Connection refused in \/var\/www\/models\/database.php:27"}
