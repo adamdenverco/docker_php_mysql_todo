@@ -37,7 +37,7 @@
 </p>
 
 <p>
-    <strong>Locally</strong>: This project is available for download at my Github here: <a target="_blank" href="https://github.com/adamdenverco/docker_php_mysql_todo">docker_php_mysql_todo</a>.
+    <strong>Live</strong>: This project is available for testing here: <a target="_blank" href="http://todo.adammwright.com/">http://todo.adammwright.com/</a>.
 </p>
 
 <h3>Other Features</h3>
