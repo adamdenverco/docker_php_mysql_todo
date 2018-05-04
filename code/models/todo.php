@@ -115,7 +115,7 @@ class Todo extends Crud {
 
         $result = [];
 
-        // set the SET values for the SQL UPDATE
+        // set the SET values for the SQL INSERT
         $data = [
             'ip_user_id' => IP_USER_ID,
             'content' => htmlspecialchars($data['content'], ENT_QUOTES, 'UTF-8'),
@@ -126,12 +126,10 @@ class Todo extends Crud {
         ];
 
         if ( $this->create($data) ) {
-            if ( $this->update($identifiers,$data) ) {
-                $result = [
-                    'status' => 'success',
-                    'message' => 'You created a new todo item.'
-                ];
-            }
+            $result = [
+                'status' => 'success',
+                'message' => 'You created a new todo item.'
+            ];
         }
 
         // if our result is not a SUCCESS, set a basic error message

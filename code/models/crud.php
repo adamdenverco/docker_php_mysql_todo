@@ -27,7 +27,7 @@ class Crud {
                     $sqlColumnBindings[] = ":" . $key;
                 }
                 $sqlColumns = implode(',', $sqlColumns);
-                $sqlColumnBindings = implode(',', $sqlColumnBindings);
+                $sqlColumnBindings = implode(', ', $sqlColumnBindings);
 
                 $sql = "
                     INSERT INTO `". $this->_table ."` (". $sqlColumns .")
@@ -42,6 +42,9 @@ class Crud {
                 }
                 // execute and fetch all data
                 $preparedSqlStatement->execute();
+
+                $preparedSqlStatement->debugDumpParams();
+
                 $newIdOrFalse = $this->pdo->lastInsertId();
 
             } catch (PDOException $e) {

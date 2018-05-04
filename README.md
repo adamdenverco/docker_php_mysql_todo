@@ -1,24 +1,6 @@
 # docker_php_mysql_todo
 
-Docker PHP MySQL Starter
-
-* This is a bare bones starter file to get you up and running wth php & mysql on docker
-
-## Getting Started
-
-##### Prerequisites
-
-* Install Docker on your computer
-    https://www.docker.com/get-docker
-
-##### Installing & Running
-
-* Open the project folder in your terminal.
-* In the terminal run the command "docker-compose up -d"
-* To view the project go to http://localhost/ in a browser.
-* To edit the mysql go to http://localhost:8080/ for phpMyAdmin
-* Log into phpMyAdmin with username "phpuser" and password "phppass"
-* To stop the project run the terminal command "docker-composer stop"
+Docker PHP MySQL Todo
 
 ## Todo App Instructions
 
@@ -42,3 +24,18 @@ As a potential employee of Broadnet we would like to be able to gauge your progr
 * Assuming you forked the repository, send us a pull request.
 * Alternatively, zip up your submission and email us.
 
+## Getting Started
+
+##### Prerequisites
+
+* Install Docker on your computer
+    https://www.docker.com/get-docker
+
+##### Installing & Running
+
+* Open the project folder in your terminal.
+* In the terminal run the command "docker-compose up -d"
+* To view the project go to http://localhost/ in a browser.
+* To edit the mysql go to http://localhost:8080/ for phpMyAdmin
+* Log into phpMyAdmin with username "phpuser" and password "phppass"
+* To stop the project run the terminal command "docker-composer stop"

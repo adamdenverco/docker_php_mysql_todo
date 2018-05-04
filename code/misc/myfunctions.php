@@ -22,7 +22,6 @@ spl_autoload_register('my_autoloader');
 function isArrayAndNotNull($data) {
     return (is_array($data) && count($data) > 0) ? true:false;
 }
-
 function validIntegerOrZero($var) {
     return ( strlen($var) == strlen((int)$var) && (int)$var > 0) ? (int)$var : 0;
 }
@@ -41,25 +40,31 @@ function cleanAlphaOnly($data) {
 function br() {
     return "<br/>\r\n";
 }
-
 function hr() {
     return "<hr/>\r\n";
 }
-
 function strong($var) {
     return "<strong>". $var . "</strong>";
 }
-
 function echoWithBreak($var) {
     echo $var . br();
 }
-
 function echoArray($var) {
     echo "<pre>";
     print_r($var);
     echo "</pre>\r\n";
 }
-
 function dateForDatabase() {
     return date('Y-m-d H:i:s');
+}
+function formatDateForDisplay($inputDate = null) {
+    $outputDate = '';
+    if ( date('Y-m-d') == date('Y-m-d', strtotime($inputDate)) ) {
+        $outputDate = 'Today at ' . date( 'g:i a', strtotime( $inputDate ) ); 
+    } elseif ( date('Y') == date('Y', strtotime($inputDate)) ) { 
+        $outputDate = date( 'M j \a\t g:i a', strtotime( $inputDate ) ); 
+    } else {
+        $outputDate = date( 'M j, Y \a\t g:i a', strtotime( $inputDate ) ); 
+    }
+    return $outputDate;
 }

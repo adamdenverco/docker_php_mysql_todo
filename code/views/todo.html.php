@@ -30,8 +30,10 @@
                     <td>
                         <?=$todo['content']?><br/>
                         <div class="small-text">
-                        <em>created: <?=$todo['date_created']?></em> | 
-                        <em>modified: <?=$todo['date_modified']?></em>
+                            <em>created: <?=formatDateForDisplay($todo['date_created'])?></em>
+                            <?php if ($todo['date_created'] != $todo['date_modified']): ?>
+                                | <em>modified: <?=formatDateForDisplay($todo['date_modified'])?></em>
+                            <?php endif; ?>
                         </div>
                     </td>
                     <td>
