@@ -43,8 +43,6 @@ class Crud {
                 // execute and fetch all data
                 $preparedSqlStatement->execute();
 
-                $preparedSqlStatement->debugDumpParams();
-
                 $newIdOrFalse = $this->pdo->lastInsertId();
 
             } catch (PDOException $e) {
