@@ -108,7 +108,6 @@ class Todo extends Crud {
 
         return $result;
 
-
     }
 
     public function newItem($data = null) {
@@ -143,9 +142,44 @@ class Todo extends Crud {
         return $result;
     }
 
-    public function editItem($id = null) {
+    public function editItem($data = []) {
 
-        return;
+        // prep result to return
+        $result = [];
+
+        // get a valid todo item or false
+        if ( $todoItem = $this->returnValidItemOrFalse($data['todo_id']) ) {
+            // set the WHERE variable for the SQL UPDATE
+            $identifiers = [
+                'todo_id' => $todoItem['todo_id'],
+                'ip_user_id' => IP_USER_ID,
+                'status_id' => 1
+            ];
+
+            // set the SET values for the SQL UPDATE
+            $data = [
+                'content' => trim( htmlspecialchars($data['content'], ENT_QUOTES, 'UTF-8') ),
+                'date_modified' => dateForDatabase()
+            ];
+
+            // attempt to update the Todo Item
+            if ( $this->update($identifiers,$data) ) {
+                $result = [
+                    'status' => 'success',
+                    'message' => 'You edited a todo item.'
+                ];
+            }
+        }
+
+        // if our result is not a SUCCESS, set a basic error message
+        if ( isset($result['status']) && $result['status'] != 'success' ) {
+            $result = [
+                'status' => 'error',
+                'message' => 'Something went wrong. Please try again.'
+            ];
+        }
+
+        return $result;
     }
 
     public function returnValidItemOrFalse($id = null) {
@@ -160,6 +194,5 @@ class Todo extends Crud {
         }
         return $returnArrayOrFalse;
     }
-
 
 }

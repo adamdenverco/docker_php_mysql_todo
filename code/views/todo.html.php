@@ -39,7 +39,7 @@
                     <td>
                         <div class="todo-controls">
                             <form action="/todo/complete" method="post">
-                                <input type="hidden" name="id" value="<?=$todo['todo_id']?>" />
+                                <input type="hidden" name="todo_id" value="<?=$todo['todo_id']?>" />
                                 <button>
                                     <?php if ($todo['completed']==0): ?>
                                         <i class="fa fa-square-o" aria-hidden="true" title="not complete"></i>
@@ -61,7 +61,7 @@
                     <td>
                         <div class="todo-controls">
                             <form action="/todo/delete" method="post">
-                                <input type="hidden" name="id" value="<?=$todo['todo_id']?>" />
+                                <input type="hidden" name="todo_id" value="<?=$todo['todo_id']?>" />
                                 <button><i class="fa fa-trash" aria-hidden="true" title="delete"></i></button>
                             </form>
                         </div>
@@ -69,11 +69,11 @@
                 </tr>
             <?php else: ?>
                 <tr>
-                    <th scope="row">&nbsp;</th>
+                    <th scope="row"><?=$todo['todo_id']?></th>
                     <td>
-                        <form action="/todo/edit" method="post">
-                            <input type="hidden" name="id" value="<?=$todo['todo_id']?>" />
-                            <textarea name="content"></textarea><br/>
+                        <form action="/todo/edit/<?=$todo['todo_id']?>" method="post">
+                            <input type="hidden" name="todo_id" value="<?=$todo['todo_id']?>" />
+                            <textarea name="content"><?=$postedItemContent;?></textarea><br/>
                             <button>Update This Todo Item</button>
                         </form>
                     </td>
@@ -88,6 +88,7 @@
             <th scope="row">&nbsp;</th>
             <td>
                 <form action="/todo/new" method="post">
+                    <strong>New Todo Item</strong><br/>
                     <input type="hidden" name="action" value="new" />
                     <textarea name="content"></textarea><br/>
                     <button>Save New Todo Item</button>

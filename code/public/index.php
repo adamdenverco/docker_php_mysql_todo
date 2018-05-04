@@ -60,7 +60,7 @@ if ($urlSegmentSection == "todo") {
     $todo = new Todo();
 
     // capture any posted variables
-    $postedItemId = validIntegerOrZero($_POST['id']);
+    $postedItemId = validIntegerOrZero($_POST['todo_id']);
     $postedItemAction = cleanAlphaOnly($_POST['action']);
     $postedItemContent = trim( htmlspecialchars($_POST['content'], ENT_QUOTES, 'UTF-8') );
 
@@ -99,15 +99,31 @@ if ($urlSegmentSection == "todo") {
     
     } elseif ($urlSegmentAction == "edit") {
 
-        // if the id is a POST variable then we want to update the database
-        if ($postedItemId > 0) {
+        // load the default data for this todo item
+        if ( $editItem = $todo->returnValidItemOrFalse($urlSegmentActionId) ) {
 
-            // 
-
-        // else the id is a GET variable we need to load the edit form
-        } elseif ($urlSegmentActionId > 0) {
-            $editItem = $todo->returnValidItemOrFalse($urlSegmentActionId);
             $editItemid = $editItem['todo_id'];
+            $postedItemContent = ($postedItemContent) ? $postedItemContent : $editItem['content'];
+    
+            // if the id is a POST variable then we want to update the database
+            if ($postedItemId > 0) {
+                
+                $result = $todo->editItem($_POST);
+                header('Location: /todo/?alert=' . json_encode($result) );
+                exit();
+            
+            // else the id is a GET variable we need to load the edit form
+            } elseif ($urlSegmentActionId > 0) {
+                // we're going to load the edit section for this todo id
+            }
+
+        } else {
+
+            $alert = [
+                'status' => 'error',
+                'message' => 'we couldn\'t find that todo item to edit.'
+            ];
+
         }
 
     }

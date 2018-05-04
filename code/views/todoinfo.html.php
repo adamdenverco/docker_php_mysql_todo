@@ -55,11 +55,19 @@
 </p>
 
 <p>
+    <strong>Security</strong>: This app uses basic security measures. All SQL queries use PDO value binding to encapsulate data and protect from SQL injections. Any text submitted is cleaned using basic PHP's htmlspecialchars. Any IDs for posts are filtered to make sure they are integers and not manipulated. Also, users are restricted to create, read, modify and delete only items attached to their automatic user_id related to their IP address.
+</p>
+
+<p>
     <strong>Logging</strong>: right now database interactions are monitored by try/catch exceptions that log errors to a monthly text file using the Logging model class.
 </p>
 
 <p>
     <strong>Clean Code</strong>: I tried to apply Clean Code principles in writing the code. This includes readable/descriptive function names and trying to keep functions shorter in length and breaking up longer or repeated code into other functions within the same class. Granted Clean Code principles recommend less comments, but as others will be looking at this code to understand the logic, I went ahead and tried to comment as much as possible.
+</p>
+
+<p>
+    <strong>Safe Deleting</strong>: All "deleted" items are simply set to an inactive status ID and hidden from the user but saved for future reference.
 </p>
 
 <p>
