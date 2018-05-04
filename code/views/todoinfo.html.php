@@ -71,6 +71,11 @@
 </p>
 
 <p>
+    <strong>Safer File System</strong>: All app files including database setting are stored below the public folder for less readible access to malicious users.
+</p>
+
+
+<p>
     <strong>Autoloading Classes</strong>: Also to speed up future development, all classes use PHP's auto loading feature.
 </p>
 
