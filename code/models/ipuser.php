@@ -94,7 +94,7 @@ class Ipuser extends Crud {
     * Get the user's IP address
     * 
     * Adapted from... 
-    * https://stackoverflow.com/questions/15699101/get-the-client-ip-address-using-php/20080357
+    * https://stackoverflow.com/questions/15699101/
     * ---------------------------------------------------------------
     */
     public function getClientIpServer() {

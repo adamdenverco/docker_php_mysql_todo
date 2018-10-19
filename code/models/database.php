@@ -3,7 +3,7 @@
  * Database Connection Singleton
  * 
  * Singleton method adapted from... 
- * https://stackoverflow.com/questions/203336/creating-the-singleton-design-pattern-in-php5
+ * https://stackoverflow.com/questions/203336
  */
 class Database {
 

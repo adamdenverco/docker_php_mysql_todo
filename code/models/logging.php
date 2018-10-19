@@ -27,7 +27,7 @@ class Logging {
             // append the $text to the end of the existing file
             try {
                 // adapted from...
-                // https://stackoverflow.com/questions/24972424/create-or-write-append-in-text-file
+                // https://stackoverflow.com/questions/24972424
                 file_put_contents($logFileName, $text, FILE_APPEND | LOCK_EX) or die("Can't add to file");
             } catch (Exception $e) {
                 // report any log file trouble

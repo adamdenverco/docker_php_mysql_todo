@@ -1,59 +1,62 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i');
+@import url('//fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,700,700i|Roboto+Condensed:400,400i,700,700i');
+@import url('//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css');
+@import url('//code.jquery.com/ui/1.12.0/themes/smoothness/jquery-ui.css');
+@import url('//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css');
 body, * {
-    font-family: 'Roboto', sans-serif;
-    line-height: 1.5em;
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.5em;
 }
 h1 {
-    font-size: 2em;
+  font: bold 2em/1.5em 'Roboto Condensed', sans-serif;
 }
 h2 {
-    font-size: 1.75em;
+  font-size: normal 1.75em/1.5em 'Roboto Condensed', sans-serif;
 }
 h3 {
-    font-size: 1.5em;
+  font-size: bold 1.5em/1.5em 'Roboto Condensed', sans-serif;
 }
 header {
 }
 nav {
-    background: #eee;
-    padding-top: 0.5em;
-    padding-bottom: 0.5em;
+  background: #eee;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
 }
 .nav-active {
-    font-weight: bold;
+  font-weight: bold;
 }
 main {
-    background: #fff;
-    padding: 10px;
+  background: #fff;
+  padding: 10px;
 }
 footer {
-    background: #eee;
-    font-size: 0.8em;
-    padding-top: 0.5em;
-    padding-bottom: 0.5em;
+  background: #eee;
+  font-size: 0.8em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
 }
 blockquote {
-    display: table; width: 90%; margin-bottom: 1em; border-bottom: 1px solid #ccc; padding: 0.5em;
+  display: table; width: 90%; margin-bottom: 1em; border-bottom: 1px solid #ccc; padding: 0.5em;
 }
 blockquote p {
-    display: table-cell; width: 90%; vertical-align: top;
+  display: table-cell; width: 90%; vertical-align: top;
 }
 blockquote p em {
-    color: #999; font-size: 0.9em;
+  color: #999; font-size: 0.9em;
 }
 blockquote form {
-    display: table-cell; width: 10%; text-align: right;
+  display: table-cell; width: 10%; text-align: right;
 }
 .small-text {
-    font-size: 0.8em;
+  font-size: 0.8em;
 }
 .todo-controls {
 
 }
 .todo-controls form {
-    display: inline-block;
+  display: inline-block;
 }
 .todo-controls form button {
-    background: none;
-    border: 0;
+  background: none;
+  border: 0;
 }
